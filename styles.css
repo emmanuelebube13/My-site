@@ -52,29 +52,29 @@ p {
 
 /* Hero Section */
 .herosection {
+    /* display: flex; */
     flex-wrap: wrap; /* Ensures wrapping on small screens */
     padding: 20px;
     gap: 20px;
-    justify-content: center;
+    justify-content: center; /* Centers content for small screens */
     border-bottom: 2px dashed black;
 }
 
 .aboutMe {
     flex: 1;
-    min-width: 280px;
+    min-width: 280px; /* Ensures readability on smaller devices */
     text-align: center;
     line-height: 1.5;
 }
 
-.profile {
-    text-align: center;
+.profile  {
+ text-align: center;
 }
 
 .profile-img {
     display: flex;
     justify-content: center;
 }
-
 /* Skills Section */
 #skills {
     text-align: center;
@@ -91,4 +91,214 @@ p {
 .social li {
     list-style-type: none;
     border: 2px solid black;
-   
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Portfolio Section */
+
+article {
+    border-top: 2px dashed black;
+    /* text-align: center; */
+    padding: 20px 0;
+}
+#portfolio {
+    text-align: center;
+}
+
+.project {
+    display: flex;
+    flex-wrap: wrap; /* Wraps projects on smaller screens */
+     gap: 50px;
+    justify-content: center;
+    padding-top: 20px;
+} 
+
+.project img {
+    border-radius: 5px;
+}
+
+.project p {
+    max-width: 500px;
+    text-align: justify; /* Improves readability */
+    overflow-wrap: break-word;
+}
+
+/* Blog Section */
+#blog {
+  
+    text-align: center;
+    /* justify-content: center; */
+    margin-top: 18px;
+}
+
+.medium {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: fit-content;
+    padding: 10px;
+  
+    margin: 0 auto;
+}
+
+.helo {
+    display: inline;
+    justify-content: center;
+}
+.medium img {
+    border-radius: 50px;
+    transition: opacity 0.3s;
+}
+
+.medium img:hover {
+    opacity: 0.7;
+}
+
+/* Contact Form */
+#contact {
+    border-top: 2px dashed black;
+    text-align: center;
+    margin-top: 18px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 10px;
+    background: #CCAFA5;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #b89482;
+}
+
+/* Footer */
+footer {
+    background: #CCAFA5;
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icons img {
+    width: 32px;
+    transition: opacity 0.3s;
+}
+
+.icons img:hover {
+    opacity: 0.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) { /* Tablets */
+    .herosection {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project, .medium {
+        flex-direction: column;
+        gap: 15px;
+    }
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) { /* Phones */
+    .aboutMe {
+        text-align: left;
+    }
+    .profile img {
+        max-width: 150px;
+    }
+    form {
+        padding: 15px;
+    }
+    footer ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) { /* Small Phones */
+    .profile img {
+        max-width: 100px;
+    }
+    .btn {
+        font-size: 1rem;
+        padding: 5px 10px;
+    }
+    form input, form textarea {
+        font-size: 12px;
+    }
+    footer  {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px; /* Smaller gap between items */
+        padding: 10px; /* Less padding for a compact layout */
+        font-size: 12px; /* Smaller font size in footer */
+    }
+    footer ul {
+        flex-direction: row;
+        gap: 5px; /* Reduce space between icons */
+    }
+    .icons img {
+        width: 24px; /* Smaller icon size */
+
+    }
+}
